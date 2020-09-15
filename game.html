@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/game.css" />
+    <title>Baseball | Game</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Baseball Game</h1>
+    </header>
+    <main>
+      <div class="questionBox">
+        <div class="squre">?</div>
+        <div class="squre">?</div>
+        <div class="squre">?</div>
+      </div>
+      <div class="checkBox">
+        <div class="status"><span>@@@@@</span></div>
+        <div class="ball">
+          <div class="dot"><span>B</span></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="strike">
+          <div class="dot"><span>S</span></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="out">
+          <div class="dot"><span>O</span></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="answerBox">
+        <div class="answerBox__title"><span>Guess the number!</span></div>
+        <input type="number" id="answerBox__answer" name="number" value="" />
+        <button class="check">check</button>
+      </div>
+    </main>
+    <footer>
+      <div class="copyRight"><span>Made by Yuns &copy</span></div>
+    </footer>
+    <script src="randomNum.js"></script>
+  </body>
+</html>
