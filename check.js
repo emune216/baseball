@@ -17,8 +17,9 @@ function inputTest() {
   } else if (num1 == num2 || num1 == num3 || num2 == num3) {
     alert("서로 다른 숫자 3개를 입력해주세요💦");
   } else {
-    compareNum(numArr);
     chkCount();
+    hiddenClass();
+    compareNum(numArr);
   }
 }
 
@@ -64,7 +65,14 @@ function compareNum(numArr) {
   if (strikeBox.length + ballBox.length == 0) {
     outBox.push("out");
   }
+  ballChk(ballBox);
+  striekChk(strikeBox);
+  outChk(outBox);
   endGame(strikeBox);
+  console.log(ranArr);
+  console.log(ballBox);
+  console.log(strikeBox);
+  console.log(outBox);
 }
 
 function endGame(strikeBox) {
@@ -73,7 +81,7 @@ function endGame(strikeBox) {
     alert("WIN!");
     refresh();
   }
-  if (count == 9) {
+  if (count == 10) {
     if (hit !== 3) {
       alert("DEFEAT..");
       refresh();
