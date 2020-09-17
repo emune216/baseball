@@ -1,25 +1,34 @@
-const input = document.querySelector("input"),
-  check = document.querySelector(".check"),
-  ranArr = getRandom();
+const input = document.querySelector("input");
+const check = document.querySelector(".check");
+const checkCount = document.querySelector(".status");
+
+var count = 0;
 
 function inputTest() {
-  const value = input.value;
-  if (value.length > 3) {
+  const num = input.value,
+    num1 = num.toString()[0],
+    num2 = num.toString()[1],
+    num3 = num.toString()[2],
+    numArr = [num1, num2, num3];
+  if (num.length > 3) {
     alert("숫자 3개를 입력해주세요💦");
-  } else if (value.length < 3) {
+  } else if (num.length < 3) {
     alert("숫자 3개를 입력해주세요💦");
+  } else if (num1 == num2 || num1 == num3 || num2 == num3) {
+    alert("서로 다른 숫자 3개를 입력해주세요💦");
   } else {
-    compareNum(value);
-    // 여기에 숫자 입력시 카운트올라가는 함수 넣어서 실행하기
+    compareNum(numArr);
+    chkCount();
   }
 }
 
-function compareNum(num) {
-  const num1 = num.toString()[0],
-    num2 = num.toString()[1],
-    num3 = num.toString()[2],
-    numArr = [num1, num2, num3],
-    ballBox = [],
+function chkCount() {
+  ++count;
+  checkCount.innerText = count + "회말";
+}
+
+function compareNum(numArr) {
+  const ballBox = [],
     strikeBox = [],
     outBox = [];
   for (var i = 0; i < 3; ++i) {
@@ -55,24 +64,19 @@ function compareNum(num) {
   if (strikeBox.length + ballBox.length == 0) {
     outBox.push("out");
   }
-  console.log(numArr);
-  console.log(ranArr);
-  console.log(ballBox);
-  console.log(strikeBox);
-  console.log(outBox);
+  endGame(strikeBox);
 }
 
-function getRandom() {
-  const ranNum = [];
-  for (var i = 0; i < 3; ++i) {
-    const n = Math.floor(Math.random() * 9) + 1;
-    if (ranNum.indexOf(n) == "-1") {
-      ranNum.push(n);
-    } else {
-      i -= 1;
+function endGame(strikeBox) {
+  const hit = strikeBox.length;
+  if (hit == 3) {
+    alert("WIN!");
+  }
+  if (count == 9) {
+    if (hit !== 3) {
+      alert("DEFEAT..");
     }
   }
-  return ranNum;
 }
 
 function init() {
