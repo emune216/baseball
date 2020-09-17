@@ -24,7 +24,7 @@ function inputTest() {
 
 function chkCount() {
   ++count;
-  checkCount.innerText = count + "회말";
+  checkCount.innerText = count + "회말 🏃‍♂️";
 }
 
 function compareNum(numArr) {
@@ -71,12 +71,18 @@ function endGame(strikeBox) {
   const hit = strikeBox.length;
   if (hit == 3) {
     alert("WIN!");
+    refresh();
   }
   if (count == 9) {
     if (hit !== 3) {
       alert("DEFEAT..");
+      refresh();
     }
   }
+}
+
+function refresh() {
+  location.reload();
 }
 
 function init() {
