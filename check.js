@@ -69,10 +69,11 @@ function compareNum(numArr) {
   striekChk(strikeBox);
   outChk(outBox);
   endGame(strikeBox);
-  console.log(ranArr);
-  console.log(ballBox);
-  console.log(strikeBox);
-  console.log(outBox);
+  //  -- Test --
+  //console.log(ranArr);
+  //console.log(ballBox);
+  //console.log(strikeBox);
+  //console.log(outBox);
 }
 
 function endGame(strikeBox) {
@@ -99,8 +100,8 @@ function init() {
 
 init();
 
-/* 
-function inputCheck() {
+/*  숫자 하나만 입력해도 세자리로 바꿔주는 알고리즘
+function inputTest() {
   const value = input.value;
 
   switch (true) {
@@ -123,7 +124,7 @@ function inputCheck() {
   }
   */
 
-/*
+/*  랜덤함수 따로 빼기전에 처음 만든 알고리즘
   function compareNum(num) {
   const num1 = num.toString()[0],
     num2 = num.toString()[1],
